@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 217, 0, 0.902);
+}
+
+.title{
+    align-self: center;
+    font-family: 'Fraunces', serif;
+    color: orangered;
+    font-size: 3rem;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+.duck-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.duck-cart-image{
+    align-self: flex-end;
+}
+
+.duck-cart-quantity{
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: center;
+}

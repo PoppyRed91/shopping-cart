@@ -1,0 +1,85 @@
+.product-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.product-card{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.product-image{ 
+    width: 20rem;
+    border: 2px solid black;
+}
+
+.product-name{
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+}
+
+.product-price{
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+}
+
+.add-to-cart-button{
+  display: flex;
+  justify-content: center;
+  background-color:  #ffd900;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add-to-cart-button:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.add-to-cart-button:hover:after {
+  transform: translate(0, 0);
+}
+
+.add-to-cart-button:active {
+  background-color: #ffd900;
+  outline: 0;
+}
+
+.add-to-cart-button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .add-to-cart-button {
+    padding: 0 40px;
+  }
+}
