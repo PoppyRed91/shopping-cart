@@ -1,9 +1,21 @@
 import CartItem from "../Components/CartItem"
+import { Product } from "../Components/ProductItem"
+import "./HomePage.css";
 
-export default function CartPage() {
+interface Props {
+    cartItems: Product[],
+}
+
+export default function CartPage({cartItems}: Props) {
     return (
-        <>
-            <h1></h1>
-        </>
+        <div>
+            {cartItems.map((item: Product)=>{
+                    return <CartItem imageSrc ={item.src} 
+                                        name={item.name} 
+                                        price={item.price}
+                                        quantity={item.quantity}
+                                        key={(Math.random()*1000).toString()}></CartItem>
+                })}
+        </div>
     )
 }

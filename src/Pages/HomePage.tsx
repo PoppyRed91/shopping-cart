@@ -1,9 +1,9 @@
-import ProductItem from "../Components/ProductItem";
+import ProductItem, { Product } from "../Components/ProductItem";
 import "./HomePage.css";
 
 interface Props {
     products: Object[],
-    onItemClick: (imageSrc: string, name: string, price: number) => void
+    onItemClick: (item: Product) => void
 }
 
 export default function HomePage({products, onItemClick}: Props) {

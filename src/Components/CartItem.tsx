@@ -1,18 +1,26 @@
+import { useState } from "react";
+
 interface Props {
     imageSrc: string,
     name: string,
     price: number,
-    onclick: () => void,
+    quantity: number,
     key: string
 }
 
-export default function CartItem({imageSrc, name, price, onclick}: Props) {
+export default function CartItem({imageSrc, name, price, quantity}: Props) {
+    
+
     return (
-        <>
-            <img>{imageSrc}</img>
-            <h5>{name}</h5>
-            <p>{price + `${" sek"}`}</p>
-            <button onClick={onclick}>Remove from cart</button>
+        <> 
+            <div className="product-card">
+                <div className="product-in-cart">
+                    <img className="product-image" src={imageSrc}></img>
+                    <h5 className="product-name">{name}</h5>
+                    <p className="product-price">{price + `${" sek"}`}</p>
+                    <p className="product-price">Quacktity of items: {quantity}</p>
+                </div> 
+            </div> 
         </>
     )
 }

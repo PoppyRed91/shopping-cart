@@ -5,23 +5,36 @@ import ProductPage from './Pages/ProductPage';
 import CartPage from './Pages/CartPage';
 import "./App.css"
 import HomePage from './Pages/HomePage';
+import { Product } from './Components/ProductItem';
 
 function App() {
   const cartImage = require("./Images/duck-cart.jpg")
 
-  const [cartItems, setCartItems] = useState<Object[]>([]);
-  const [itemsInCart, setItemsInCart] = useState(0);
+  const [cartItems, setCartItems] = useState<Product[]>([]); //Actual items in a cart
+  const [itemsInCart, setItemsInCart] = useState(0); //NUMBER of items in a cart
 
-  function handleClick(src: string, name: string, price: number) {
-    const item = [name, src, price];
-    let currentItems = cartItems;
-    currentItems.push(item);
-    setCartItems(currentItems);
-    setItemsInCart(currentItems.length);
-    console.log("Items in cart: " + cartItems.length);
-    console.log("Added item: " + name);
+  function handleClick(item: Product) {
+    let newCartItems:Product[] = cartItems;
+    let newItemNumber = itemsInCart;
+    let shouldAdd: boolean = true;
+    for(let i of newCartItems) {
+      if(i.name == item.name) {
+        shouldAdd = false;
+        i.quantity++
+        newItemNumber++
+        break;
+      }
+    }
+    if(shouldAdd){
+      newCartItems.push(item);
+      newItemNumber++;
+    }
     
+    setCartItems(newCartItems);
+    setItemsInCart(newItemNumber);
+
   }
+
   
   let productItems: Object[] = [
     {
@@ -94,7 +107,7 @@ function App() {
           />
           <Route
           path='/cart'
-          element={<CartPage/>}
+          element={<CartPage cartItems={cartItems}/>}
           />
         </Routes>
     </>

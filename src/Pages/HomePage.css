@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 4rem;
     margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .product-card{
@@ -82,4 +83,12 @@
   .add-to-cart-button {
     padding: 0 40px;
   }
+}
+
+.product-in-cart{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
